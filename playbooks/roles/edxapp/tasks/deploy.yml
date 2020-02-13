@@ -1,4 +1,5 @@
 ---
+EDXAPP_PYTHON_VERSION: 'python3.5'
 - name: copy the template to the desired location
   template:
     src: "{{ item.src }}"
@@ -283,7 +284,7 @@
     - install:app-requirements
 
 - name: compiling all py files in the edx-platform repo
-  shell: "{{ edxapp_venv_bin }}/{{ EDXAPP_PYTHON_VERSION }} -m compileall -q -x '.git/.*|node_modules/.*' {{ edxapp_code_dir }}"
+  shell: "{{ edxapp_venv_bin }}/python -m compileall -q -x '.git/.*|node_modules/.*' {{ edxapp_code_dir }}"
   become_user: "{{ edxapp_user }}"
   tags:
     - install
