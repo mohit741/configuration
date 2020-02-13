@@ -43,15 +43,6 @@
     - install
     - install:app-requirements
 
-- name: install development requirements
-  command: make local-requirements
-  args:
-    chdir: "{{ '{{' }} {{ role_name }}_code_dir }}"
-  sudo_user: "{{ '{{' }} {{ role_name }}_user }}"
-  environment: "{{ '{{' }} {{ role_name }}_environment }}"
-  tags:
-    - devstack
-    - devstack:install
 
 - name: migrate database
   command: make migrate

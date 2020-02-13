@@ -108,18 +108,6 @@
     - install
     - install:app-requirements
 
-- name: install development requirements
-  command: make requirements
-  args:
-    chdir: "{{ edx_django_service_code_dir }}"
-  become_user: "{{ edx_django_service_user }}"
-  environment: "{{ edx_django_service_environment }}"
-  when: edx_django_service_is_devstack is defined and edx_django_service_is_devstack
-  tags:
-    - install
-    - install:app-requirements
-    - devstack
-    - devstack:install
 
 - name: migrate database
   command: make migrate
