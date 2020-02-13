@@ -1,6 +1,6 @@
 ---
 EDXAPP_SETTINGS: 'devstack_docker'
-EDXAPP_MEMCACHE: ['edx.devstack.memcached:11211']
+EDXAPP_MEMCACHE: ['edx.devstack.memcached:11211', 'localhost']
 EDXAPP_MYSQL_HOST: "edx.devstack.mysql"
 EDXAPP_MONGO_HOSTS:
   - "edx.devstack.mongo"
